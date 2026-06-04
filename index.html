@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;700&display=swap
 
   <style>
     body {
@@ -56,7 +56,7 @@
   <!-- HERO -->
   <header class="hero">
     <!-- REPLACE THIS IMAGE PATH -->
-    <img src="assets/images/hero.jpg" alt="Wedding hero image">
+    assets/images/hero.jpg
 
     <div class="hero-content px-4">
       <p class="uppercase tracking-widest mb-2 text-sm opacity-80">
@@ -95,3 +95,114 @@
         <p id="code-error" class="text-red-600 hidden">
           Invalid code. Please check your invitation.
         </p>
+      </form>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events-section" class="mb-20 hidden">
+      <h2 class="heading-font text-center text-2xl font-bold mb-12">
+        You Are Invited To
+      </h2>
+
+      <div class="flex flex-wrap justify-center gap-8">
+
+        <!-- SANGEET -->
+        <div id="sangeet" class="event-card hidden max-w-sm bg-white rounded-2xl shadow-lg overflow-hidden">
+          assets/images/sangeet.jpg
+          <div class="p-6 text-center">
+            <h3 class="heading-font text-xl font-bold mb-2">Sangeet Night</h3>
+            <p>Friday, 26th March 2027</p>
+            <p class="italic text-stone-500 mb-4">Mumbai</p>
+          </div>
+        </div>
+
+        <!-- WEDDING -->
+        <div id="wedding" class="event-card hidden max-w-sm bg-white rounded-2xl shadow-lg overflow-hidden">
+          assets/images/wedding.jpg
+          <div class="p-6 text-center">
+            <h3 class="heading-font text-xl font-bold mb-2">Wedding Ceremony</h3>
+            <p>Saturday, 27th March 2027</p>
+            <p class="italic text-stone-500 mb-4">Mumbai</p>
+          </div>
+        </div>
+
+        <!-- RECEPTION -->
+        <div id="reception" class="event-card hidden max-w-sm bg-white rounded-2xl shadow-lg overflow-hidden">
+          assets/images/reception.jpg
+          <div class="p-6 text-center">
+            <h3 class="heading-font text-xl font-bold mb-2">Reception</h3>
+            <p>Sunday, 28th March 2027</p>
+            <p class="italic text-stone-500 mb-4">Delhi</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section
+      id="rsvp-section"
+      class="bg-amber-50 rounded-3xl p-10 text-center max-w-2xl mx-auto hidden"
+    >
+      <h2 class="heading-font text-2xl font-bold mb-6">RSVP</h2>
+      <a
+        href="https://docs.google.com/forms/"
+        target="_blank"
+        class="inline-block px-8 py-3 rounded-full font-bold text-white"
+        style="background: rgb(180,83,9);"
+      >
+        Click to RSVP
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 text-stone-400">
+    With love, Sanyukta & Rishabh ♥
+  </footer>
+
+  <!-- LOGIC -->
+  <script>
+    const CODES = {
+      "SaRi2027": ["sangeet", "wedding", "reception"],
+      "SaRiWedding": ["wedding"],
+      "SaRiSangeet": ["sangeet"],
+      "SaRi2627": ["sangeet", "wedding"],
+      "SaRi28": ["reception"]
+    };
+
+    const form = document.getElementById("code-form");
+    const input = document.getElementById("access-code-input");
+    const error = document.getElementById("code-error");
+    const eventsSection = document.getElementById("events-section");
+    const rsvpSection = document.getElementById("rsvp-section");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const code = input.value.trim();
+      const access = CODES[code];
+
+      document.querySelectorAll(".event-card").forEach(card =>
+        card.classList.add("hidden")
+      );
+
+      if (!access) {
+        error.classList.remove("hidden");
+        return;
+      }
+
+      error.classList.add("hidden");
+      eventsSection.classList.remove("hidden");
+      rsvpSection.classList.remove("hidden");
+
+      access.forEach(id => {
+        document.getElementById(id).classList.remove("hidden");
+      });
+
+      eventsSection.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
