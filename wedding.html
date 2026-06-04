@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanyukta & Rishabh – Wedding Celebrations</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Alegreya', serif;
+      background: #fdf8f0;
+      color: #292524;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+    }
+
+    .hidden { display: none; }
+
+    header {
+      padding: 90px 20px;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+        url("assets/images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    header p {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* Code entry */
+    .code-box {
+      max-width: 420px;
+      margin: -20px auto 40px;
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,.08);
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.05rem;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid #d6d3d1;
+      margin-bottom: 16px;
+    }
+
+    button {
+      background: #b45309;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover { opacity: 0.9; }
+
+    .error {
+      color: #b91c1c;
+      margin-top: 12px;
+    }
+
+    /* Events grid */
+    .events {
+      margin-top: 60px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      text-align: center;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 24px;
+    }
+
+    .event-content p {
+      margin: 6px 0;
+      color: #57534e;
+    }
+
+    .calendar-link {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #d97706;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #a8a29e;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <p>Together with their families</p>
+  <h1>Sanyukta & Rishabh</h1>
+  <p>March 2027</p>
+</header>
+
+<main>
+
+  <!-- Code Gate -->
+  <section id="code-section" class="code-box">
+    <h2>Welcome</h2>
+    <p>Please enter your invitation code</p>
+
+    <form id="code-form">
+      <input id="code-input" type="text" placeholder="Your code">
+      <button type="submit">View Invitation</button>
+    </form>
+
+    <div id="error" class="error hidden">
+      Invalid code. Please check your invitation.
+    </div>
+  </section>
+
+  <!-- Invitation -->
+  <section id="invite-section" class="events hidden">
+    <h2>You are invited to</h2>
+
+    <div class="grid">
+
+      <!-- SANGEET -->
+      <div id="event-sangeet" class="event-card hidden">
+        <img src="assets/images/sangeet.jpg" alt="Sangeet">
+        <div class="event-content">
+          <h3>Sangeet</h3>
+          <p>26th March 2027</p>
+          <p>Mumbai, India</p>
+          <a class="calendar-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sangeet+-+Sanyukta+%26+Rishabh&dates=20270326T180000/20270326T230000&location=Mumbai,India" target="_blank">
+            Add to Google Calendar
+          </a>
+        </div>
+      </div>
+
+      <!-- WEDDING -->
+      <div id="event-wedding" class="event-card hidden">
+        <img src="assets/images/wedding.jpg" alt="Wedding">
+        <div class="event-content">
+          <h3>Wedding</h3>
+          <p>27th March 2027</p>
+          <p>Mumbai, India</p>
+          <a class="calendar-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+-+Sanyukta+%26+Rishabh&dates=20270327T110000/20270327T140000&location=Mumbai,India" target="_blank">
+            Add to Google Calendar
+          </a>
+        </div>
+      </div>
+
+      <!-- RECEPTION -->
+      <div id="event-reception" class="event-card hidden">
+        <img src="assets/images/reception.jpg" alt="Reception">
+        <div class="event-content">
+          <h3>Reception</h3>
+          <p>28th March 2027</p>
+          <p>Delhi, India</p>
+          <a class="calendar-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Reception+-+Sanyukta+%26+Rishabh&dates=20270328T180000/20270328T230000&location=Delhi,India" target="_blank">
+            Add to Google Calendar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  With love, Sanyukta & Rishabh ♥
+</footer>
+
+<script>
+  const CODES = {
+    "SaRi2027": ["sangeet", "wedding", "reception"],
+    "SaRiWedding": ["wedding"],
+    "SaRiSangeet": ["sangeet"],
+    "SaRi28": ["reception"],
+    "SaRi2627": ["sangeet", "wedding"]
+  };
+
+  const form = document.getElementById("code-form");
+  const input = document.getElementById("code-input");
+  const error = document.getElementById("error");
+  const codeSection = document.getElementById("code-section");
+  const inviteSection = document.getElementById("invite-section");
+
+  const events = {
+    sangeet: document.getElementById("event-sangeet"),
+    wedding: document.getElementById("event-wedding"),
+    reception: document.getElementById("event-reception")
+  };
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const code = input.value.trim();
+    const allowed = CODES[code];
+
+    Object.values(events).forEach(ev => ev.classList.add("hidden"));
+
+    if (!allowed) {
+      error.classList.remove("hidden");
+      return;
+    }
+
+    error.classList.add("hidden");
+    codeSection.classList.add("hidden");
+    inviteSection.classList.remove("hidden");
+
+    allowed.forEach(name => events[name].classList.remove("hidden"));
+  });
+</script>
+
+</body>
+</html>
